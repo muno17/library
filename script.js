@@ -8,3 +8,9 @@ function Book(title, author, pages, read) {
         return title + ", " + pages + "pages, " + read;
     }
 }
+
+let myLibrary = [];
+
+function addBookToLibrary(book) {
+    myLibrary.push(book);
+}
