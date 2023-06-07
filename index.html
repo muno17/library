@@ -20,23 +20,14 @@
         </div>
         <div id="rightSide">
             <form id="newBookForm">
-                <div>
-                    <label for="titleid">Title:</label>
-                    <input type="text" id="titleid" name="titleid">
-                </div>
-                <div>
-                    <label for="authorid">Author:</label>
-                    <input type="text" id="authorid" name="authorid">
-                </div>
-                <div>
-                    <label for="pagesid">Pages:</label>
-                    <input type="text" id="pagesid" name="pagesid">
-                </div>
+                <input type="text" id="titleid" placeHolder="Title" required>
+                <input type="text" id="authorid" placeHolder="Author" required>
+                <input type="text" id="pagesid" placeHolder="# of pages" required>
                 <div id="readButtons">
                     <button id="read">Read</button>
                     <button id="notread">Not Read</button>
                 </div>
-                <button id="bookButton">Add Book</button>
+                <button id="bookButton" type="submit">Add Book</button>
             </form>
         </div>
     </div>

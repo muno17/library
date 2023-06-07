@@ -36,6 +36,7 @@ function bookDisplayer(arr) {
     let length = arr.length;
 
     let grid = document.getElementById('gridContainer');
+    grid.innerHTML = "";
 
     // loop through the array and add each book to the grid
     for (let i = 0; i < length; i++) {
@@ -44,7 +45,7 @@ function bookDisplayer(arr) {
 
         let current = arr[i];
         newDiv.innerHTML += `Title: ${current.title}`;
-        newDiv.appendChild(linebreak) ;
+        newDiv.appendChild(linebreak);
         newDiv.innerHTML += `Author: ${current.author}`;
         newDiv.appendChild(linebreak);
         newDiv.innerHTML += `Pages: ${current.pages}`;      
@@ -55,4 +56,6 @@ function bookDisplayer(arr) {
 
     }
 }
+
+
 
