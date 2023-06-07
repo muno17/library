@@ -28,12 +28,8 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
-let newBook = document.getElementById('bookButton');
-newBook.addEventListener('click', () => {
-    console.log(myLibrary);
-})
-
-let testarr = [];
+let bookButton = document.getElementById('bookButton');
+bookButton.addEventListener('click', addBookToLibrary());
 
 
 function bookDisplayer(arr) {
@@ -43,8 +39,8 @@ function bookDisplayer(arr) {
 
     // loop through the array and add each book to the grid
     for (let i = 0; i < length; i++) {
-        let newDiv = document.createElement("div");    
-        let linebreak = document.createElement("br");    
+        let newDiv = document.createElement('div');    
+        let linebreak = document.createElement('br');    
 
         let current = arr[i];
         newDiv.innerHTML += `Title: ${current.title}`;
@@ -59,3 +55,4 @@ function bookDisplayer(arr) {
 
     }
 }
+

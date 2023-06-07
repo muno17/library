@@ -8,21 +8,40 @@
     <title>Library</title>
 </head>
 <body>
-    <div class="Header">
-        <h1 id="mainHeader">muno Library</h1>
-    </div>
     <div id="main">
-        <div id="gridContainer">
-            <div>Item 1</div>
-            <div>Item 2</div>
-            <div>Item 3</div>
+        <div id="leftSide">
+            <div class="Header">
+                <h1 id="mainHeader">muno Library</h1>
+            </div>
+            <div id="main">
+                <div id="gridContainer">
+                </div>
+            </div>
         </div>
-        <div id="side">
-            <button id="bookButton">New Book</button>
+        <div id="rightSide">
+            <form id="newBookForm">
+                <div>
+                    <label for="titleid">Title:</label>
+                    <input type="text" id="titleid" name="titleid">
+                </div>
+                <div>
+                    <label for="authorid">Author:</label>
+                    <input type="text" id="authorid" name="authorid">
+                </div>
+                <div>
+                    <label for="pagesid">Pages:</label>
+                    <input type="text" id="pagesid" name="pagesid">
+                </div>
+                <div id="readButtons">
+                    <button id="read">Read</button>
+                    <button id="notread">Not Read</button>
+                </div>
+                <button id="bookButton">Add Book</button>
+            </form>
         </div>
     </div>
     <div class="footer">
-
+        © 2023 Danny Muñoz
     </div>
 </body>
 <script src="script.js"></script>
