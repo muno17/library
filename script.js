@@ -46,7 +46,10 @@ function bookDisplayer(arr) {
         let newDiv = document.createElement("div");
 
         let current = arr[i];
-        newDiv.innerHTML += `Title: ${current.title}`;
+        newDiv.innerHTML += `Title: ${current.title}\n
+                            Author: ${current.author}\n
+                            Pages: ${current.pages}\n
+                            Read: ${current.read}`;
 
         grid.appendChild(newDiv);
 
