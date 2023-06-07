@@ -43,13 +43,17 @@ function bookDisplayer(arr) {
 
     // loop through the array and add each book to the grid
     for (let i = 0; i < length; i++) {
-        let newDiv = document.createElement("div");
+        let newDiv = document.createElement("div");    
+        let linebreak = document.createElement("br");    
 
         let current = arr[i];
-        newDiv.innerHTML += `Title: ${current.title}\n
-                            Author: ${current.author}\n
-                            Pages: ${current.pages}\n
-                            Read: ${current.read}`;
+        newDiv.innerHTML += `Title: ${current.title}`;
+        newDiv.appendChild(linebreak) ;
+        newDiv.innerHTML += `Author: ${current.author}`;
+        newDiv.appendChild(linebreak);
+        newDiv.innerHTML += `Pages: ${current.pages}`;      
+        newDiv.appendChild(linebreak); 
+        newDiv.innerHTML += `Read: ${current.read}`;
 
         grid.appendChild(newDiv);
 
