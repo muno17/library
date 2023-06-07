@@ -22,3 +22,21 @@ button {
 #newBook {
     font-family: ubuntu;
 }
+
+#mainHeader {
+    font-size: 4rem;
+}
+
+#gridContainer {
+    border-style: solid;
+    border-color: white;
+    display: grid;
+    padding: 3rem;
+
+    grid-template-columns: 25% 25% 25% 25%;
+
+
+
+    column-gap: 1rem;
+    row-gap: 1.5rem;
+}
