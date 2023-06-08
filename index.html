@@ -23,9 +23,12 @@
                 <input type="text" id="titleid" placeHolder="Title" required>
                 <input type="text" id="authorid" placeHolder="Author" required>
                 <input type="text" id="pagesid" placeHolder="# of pages" required>
-                <div id="readButtons">
-                    <button id="read">Read</button>
-                    <button id="notread">Not Read</button>
+                <div id="switchHouse">
+                <label for="readSwitch">Read: </label>
+                    <label class="switch">
+                        <input class="off" id="readSwitch" type="checkbox" name="readSwitch">
+                        <span class="readSlider round"></span>
+                    </label>
                 </div>
                 <button id="bookButton" type="submit">Add Book</button>
             </form>
