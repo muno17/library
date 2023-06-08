@@ -24,12 +24,8 @@ function Book(title, author, pages, read) {
     };
 }
 
-function addBookToLibrary(book) {
-    myLibrary.push(book);
-}
-
 let bookButton = document.getElementById('bookButton');
-bookButton.addEventListener('click', addBookToLibrary());
+bookButton.addEventListener('click', () => {addBookToLibrary()});
 
 
 function bookDisplayer(arr) {
@@ -39,7 +35,7 @@ function bookDisplayer(arr) {
     grid.innerHTML = "";
 
     // loop through the array and add each book to the grid
-    for (let i = 0; i < length; i++) {
+    for (let i = 0; i < length - 1; i++) {
         let newDiv = document.createElement('div');    
         let linebreak = document.createElement('br');    
 
@@ -57,5 +53,24 @@ function bookDisplayer(arr) {
     }
 }
 
+// take form fields and create new book when add book is pressed
+function addBookToLibrary(book) {
+    let newTitle = document.getElementById("titleid");
+    let newAuthor = document.getElementById("authorid");
+    let newPages = document.getElementById("pagesid");
+
+    // create new book taking values of form fields
+    let newBook = new Book;
+    newBook.title = newTitle.innerHTML;
+    newBook.author = newAuthor.innerHTML;
+    newBook.pages = newPages.innerHTML;
+    newBook.read = true;
+
+    myLibrary.push(book);
+    bookDisplayer(myLibrary);
+    // run bookDisplayer after book has been added
+}
+
+// add function to proto to remove books from library
 
 
