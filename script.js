@@ -7,6 +7,14 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;
 
+    this.markRead = function () {
+        if (this.read === "True") {
+            this.read = "False";
+        } else {
+            this.read = "True";
+        }
+    }
+
     this.info = function () {
         return title + ", " + pages + "pages, " + read;
     };
@@ -76,7 +84,7 @@ function addBookToLibrary(book) {
     let newTitle = document.getElementById("titleid").value;
     let newAuthor = document.getElementById("authorid").value;
     let newPages = document.getElementById("pagesid").value;
-    let switchInfo= document.getElementById("readSwitch");
+    let switchInfo = document.getElementById("readSwitch");
 
     // add book if all fields are valid
     if (newTitle && newAuthor && newPages){
@@ -85,8 +93,13 @@ function addBookToLibrary(book) {
         newBook.title = newTitle;
         newBook.author = newAuthor;
         newBook.pages = newPages;
-        newBook.read = true;
-
+        
+        if (switchInfo.checked == true) {
+            newBook.read = true
+        } else {
+            newBook.read = false;
+        }
+             
         if (newBook.title != undefined) {
             myLibrary.push(newBook);
         }
