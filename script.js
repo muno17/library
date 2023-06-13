@@ -1,5 +1,6 @@
 let myLibrary = [];
 
+
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -11,14 +12,13 @@ function Book(title, author, pages, read) {
     };
 }
 
+
 let bookButton = document.getElementById('bookButton');
 bookButton.addEventListener('click', () => {
     addBookToLibrary();
     bookDisplayer(myLibrary);
     document.getElementById('newBookForm').reset();
 });
-
-
 
 
 function bookDisplayer(arr) {
@@ -53,17 +53,22 @@ function bookDisplayer(arr) {
         deleteButton.classList.add('cardButton')
         deleteButton.innerHTML += 'Delete';
         newDiv.appendChild(deleteButton);
+        deleteButton.addEventListener('click', (e) => {
+            newDiv.remove();
+        })
 
 
         grid.appendChild(newDiv);
     }
 }
 
+
 // remove form submit default setting
 let form = document.getElementById('newBookForm');
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 })
+
 
 // take form fields and create new book when add book is pressed
 function addBookToLibrary(book) {
@@ -89,6 +94,8 @@ function addBookToLibrary(book) {
     // run bookDisplayer after book has been added
 }
 
-// figure out how to add switch info to Book
-// add function to proto to remove books from library
-// add function to change read status
+
+function markRead(arr) {
+
+
+}
