@@ -1,17 +1,4 @@
-let myLibrary = [
-    // {
-    //     title: "Rafa and the Rafettes",
-    //     author: "Rafaela",
-    //     pages: 420,
-    //     read: true,
-    // },
-    // {
-    //     title: "Rafa and the Rafettes 2",
-    //     author: "Rafaela",
-    //     pages: 69,
-    //     read: false,
-    // },
-];
+let myLibrary = [];
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -42,8 +29,11 @@ function bookDisplayer(arr) {
 
     // loop through the array and add each book to the grid
     for (let i = 0; i < length; i++) {
+        let current = arr[i];
+        if (current === undefined) continue;
+
         let newDiv = document.createElement('div');
-        newDiv.classList.add("bookCard");   
+        newDiv.classList.add('bookCard');   
 
         let newDivTitle = document.createElement('div');
         newDiv.appendChild(newDivTitle);
@@ -54,29 +44,18 @@ function bookDisplayer(arr) {
         let newDivRead = document.createElement("div");
         newDiv.appendChild(newDivRead);
 
- 
-        // let linebreak = document.createElement('br');    
-
-        let current = arr[i];
-        if (current === undefined) continue;
-
         newDivTitle.innerHTML += `Title: ${current.title}`;
         newDivAuthor.innerHTML += `Author: ${current.author}`;
         newDivPages.innerHTML += `Pages: ${current.pages}`;      
         newDivRead.innerHTML += `Read: ${current.read}`;
 
-        // newDiv.innerHTML += `Title: ${current.title}`;
-        // newDiv.appendChild(linebreak);
-        // newDiv.innerHTML += `Author: ${current.author}`;
-        // newDiv.appendChild(linebreak);
-        // newDiv.innerHTML += `Pages: ${current.pages}`;
-        // newDiv.appendChild(linebreak);
-        // newDiv.innerHTML += `Read: ${current.read}`;
-
+        let deleteButton = document.createElement('button');
+        deleteButton.classList.add('cardButton')
+        deleteButton.innerHTML += 'Delete';
+        newDiv.appendChild(deleteButton);
 
 
         grid.appendChild(newDiv);
-
     }
 }
 
