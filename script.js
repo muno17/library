@@ -54,8 +54,13 @@ function bookDisplayer(arr) {
 
         newDivTitle.innerHTML += `Title: ${current.title}`;
         newDivAuthor.innerHTML += `Author: ${current.author}`;
-        newDivPages.innerHTML += `Pages: ${current.pages}`;      
-        newDivRead.innerHTML += `Read: ${current.read}`;
+        newDivPages.innerHTML += `Pages: ${current.pages}`; 
+
+        if (current.read == true) {     
+            newDivRead.innerHTML += 'Read: Yes';
+        } else {
+            newDivRead.innerHTML += "Read: No";
+        }
 
         let buttonDiv = document.createElement('div');
         buttonDiv.classList.add('buttonDiv');
@@ -68,7 +73,12 @@ function bookDisplayer(arr) {
         buttonDiv.appendChild(readButton);
         readButton.addEventListener('click', (e) => {
             arr[i].markRead();
-            newDivRead.innerHTML = `Read: ${current.read}`;
+
+            if (current.read == true) {
+                newDivRead.innerHTML = "Read: Yes";
+            } else {
+                newDivRead.innerHTML = "Read: No";
+            }
         })
 
         let deleteButton = document.createElement("button");
