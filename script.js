@@ -25,8 +25,7 @@ function Book(title, author, pages, read) {
 }
 
 let bookButton = document.getElementById('bookButton');
-bookButton.addEventListener('click', (event) => {
-    // event.preventDefault();
+bookButton.addEventListener('click', () => {
     addBookToLibrary();
     bookDisplayer(myLibrary);
     document.getElementById('newBookForm').reset();
@@ -43,7 +42,8 @@ function bookDisplayer(arr) {
 
     // loop through the array and add each book to the grid
     for (let i = 0; i < length; i++) {
-        let newDiv = document.createElement('div');    
+        let newDiv = document.createElement('div');
+        newDiv.classList.add('bookCard');    
         let linebreak = document.createElement('br');    
 
         let current = arr[i];
@@ -92,6 +92,6 @@ function addBookToLibrary(book) {
     // run bookDisplayer after book has been added
 }
 
+// figure out how to add switch info to Book
 // add function to proto to remove books from library
-
-
+// add function to change read status
