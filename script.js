@@ -43,19 +43,37 @@ function bookDisplayer(arr) {
     // loop through the array and add each book to the grid
     for (let i = 0; i < length; i++) {
         let newDiv = document.createElement('div');
-        newDiv.classList.add('bookCard');    
-        let linebreak = document.createElement('br');    
+        newDiv.classList.add("bookCard");   
+
+        let newDivTitle = document.createElement('div');
+        newDiv.appendChild(newDivTitle);
+        let newDivAuthor = document.createElement("div");
+        newDiv.appendChild(newDivAuthor);
+        let newDivPages = document.createElement("div");
+        newDiv.appendChild(newDivPages);
+        let newDivRead = document.createElement("div");
+        newDiv.appendChild(newDivRead);
+
+ 
+        // let linebreak = document.createElement('br');    
 
         let current = arr[i];
         if (current === undefined) continue;
 
-        newDiv.innerHTML += `Title: ${current.title}`;
-        newDiv.appendChild(linebreak);
-        newDiv.innerHTML += `Author: ${current.author}`;
-        newDiv.appendChild(linebreak);
-        newDiv.innerHTML += `Pages: ${current.pages}`;      
-        newDiv.appendChild(linebreak); 
-        newDiv.innerHTML += `Read: ${current.read}`;
+        newDivTitle.innerHTML += `Title: ${current.title}`;
+        newDivAuthor.innerHTML += `Author: ${current.author}`;
+        newDivPages.innerHTML += `Pages: ${current.pages}`;      
+        newDivRead.innerHTML += `Read: ${current.read}`;
+
+        // newDiv.innerHTML += `Title: ${current.title}`;
+        // newDiv.appendChild(linebreak);
+        // newDiv.innerHTML += `Author: ${current.author}`;
+        // newDiv.appendChild(linebreak);
+        // newDiv.innerHTML += `Pages: ${current.pages}`;
+        // newDiv.appendChild(linebreak);
+        // newDiv.innerHTML += `Read: ${current.read}`;
+
+
 
         grid.appendChild(newDiv);
 
