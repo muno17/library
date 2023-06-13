@@ -8,10 +8,10 @@ function Book(title, author, pages, read) {
     this.read = read;
 
     this.markRead = function () {
-        if (this.read === "True") {
-            this.read = "False";
+        if (this.read === true) {
+            this.read = false;
         } else {
-            this.read = "True";
+            this.read = true;
         }
     }
 
@@ -57,13 +57,28 @@ function bookDisplayer(arr) {
         newDivPages.innerHTML += `Pages: ${current.pages}`;      
         newDivRead.innerHTML += `Read: ${current.read}`;
 
-        let deleteButton = document.createElement('button');
-        deleteButton.classList.add('cardButton')
-        deleteButton.innerHTML += 'Delete';
-        newDiv.appendChild(deleteButton);
-        deleteButton.addEventListener('click', (e) => {
-            newDiv.remove();
+        let buttonDiv = document.createElement('div');
+        buttonDiv.classList.add('buttonDiv');
+        newDiv.appendChild(buttonDiv)
+
+
+        let readButton = document.createElement('button');
+        readButton.classList.add('cardButton');
+        readButton.innerHTML = 'Read';
+        buttonDiv.appendChild(readButton);
+        readButton.addEventListener('click', (e) => {
+            arr[i].markRead();
+            newDivRead.innerHTML = `Read: ${current.read}`;
         })
+
+        let deleteButton = document.createElement("button");
+        deleteButton.classList.add("cardButton");
+        deleteButton.innerHTML += "Delete";
+        buttonDiv.appendChild(deleteButton);
+        deleteButton.addEventListener("click", (e) => {
+            newDiv.remove();
+            arr.splice(i, 1);
+        });
 
 
         grid.appendChild(newDiv);
@@ -79,7 +94,7 @@ form.addEventListener('submit', (e) => {
 
 
 // take form fields and create new book when add book is pressed
-function addBookToLibrary(book) {
+function addBookToLibrary() {
 
     let newTitle = document.getElementById("titleid").value;
     let newAuthor = document.getElementById("authorid").value;
@@ -93,7 +108,7 @@ function addBookToLibrary(book) {
         newBook.title = newTitle;
         newBook.author = newAuthor;
         newBook.pages = newPages;
-        
+
         if (switchInfo.checked == true) {
             newBook.read = true
         } else {
@@ -108,7 +123,7 @@ function addBookToLibrary(book) {
 }
 
 
-function markRead(arr) {
+function markRead(book) {
 
 
 }

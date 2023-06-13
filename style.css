@@ -82,6 +82,11 @@ h1 {
     font-size: 1rem;
 }
 
+.buttonDiv {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 button {
     border-radius: .5em;
     height: 3rem;
